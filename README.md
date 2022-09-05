@@ -1,4 +1,4 @@
-# Flarum Extensions Russian Language Pack (UNOFFICIAL)
+# Flarum Extra Russian Language Pack (UNOFFICIAL)
 
 ![Flarum Extensions Russian Language Pack](https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Flag-map_of_Russia.svg/2560px-Flag-map_of_Russia.svg.png)
 
@@ -6,18 +6,48 @@
 
 Все фразы взяты в двойные кавычки для предотвращения конфликтов со знаками препинания, потому что их в русском языке используется большее количество, по сравнению с английским.
 
-## Документация
+## Установка
 
-Документация по пакету русской локализации находится в [**WIKI**](https://github.com/pkgstore/flarum-l10n-ext-russian/wiki).
+**Flarum** использует [**Composer**](https://getcomposer.org/) для управления зависимостями и расширениями.
 
-## От автора или что такое "неофициальная локализация"?
+Русский пакет локализации доступен в [**Packagist**](https://packagist.org/packages/cmfstore/flarum-l10n-russian-extra) и может быть установлен при помощи **Composer**.
+
+Убедитесь, что **Composer** установлен на вашем компьютере, и введите следующую команду в терминале, находясь в корневой директории **Flarum**:
+
+```sh
+composer require cmfstore/flarum-l10n-russian-extra
+```
+
+Так же, данная команда может быть использована для обновления языкового пакета, без обновления сторонних компонентов.
+
+Обратите внимание, что пакет локализации будет добавлен в качестве зависимости **Flarum**, и он также будет автоматически обновляться при обновлении движка форума.
+
+## Обновление
+
+Для обновления локализации необходимо выполнить следующие команды:
+
+```sh
+composer update cmfstore/flarum-l10n-russian-extra
+php flarum cache:clear
+```
+
+## Удаление
+
+Для удаления локализации необходимо выполнить следующие команды:
+
+```sh
+composer remove cmfstore/flarum-l10n-russian-extra
+php flarum cache:clear
+```
+
+## От автора или что такое "неофициальная локализация"
 
 Здравствуйте!
 
 Я развиваю две локализации Flarum:
 
 1. [официальная](https://github.com/flarum-lang/russian);
-2. [неофициальная](https://github.com/pkgstore/flarum-l10n-ext-russian).
+2. [неофициальная](https://github.com/cmfstore/flarum-l10n-russian-extra).
 
 Неофициальная локализация отличается лишь тем, что используется только на моих проектах. Все изменения в неофициальной версии переносятся в официальную.
 

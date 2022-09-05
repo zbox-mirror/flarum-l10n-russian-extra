@@ -1,30 +1,45 @@
 {
-  "name": "pkgstore/flarum-l10n-ext-russian",
-  "description": "Flarum Extensions Russian language pack (UNOFFICIAL).",
+  "name": "cmfstore/flarum-l10n-russian-extra",
+  "description": "Flarum extra russian language pack (UNOFFICIAL).",
   "type": "flarum-extension",
   "license": "MIT",
-  "homepage": "https://pkgstore.github.io/",
-  "keywords": ["z17", "extension", "flarum", "russian", "language", "locale", "localization", "translation"],
+  "homepage": "https://github.com/cmfstore",
+  "keywords": [
+    "z17",
+    "extension",
+    "flarum",
+    "russian",
+    "language",
+    "locale",
+    "localization",
+    "translation"
+  ],
   "authors": [
     {
-      "name": "Kitsune Solar",
-      "email": "kitsune.solar@gmail.com",
-      "homepage": "https://kitsune.solar/",
+      "name": "z17 Dev",
+      "email": "mail@z17.dev",
+      "homepage": "https://z17.dev/",
+      "role": "Translator"
+    },
+    {
+      "name": "z17 CX",
+      "email": "mail@z17.cx",
+      "homepage": "https://z17.cx/",
       "role": "Translator"
     }
   ],
   "support": {
-    "source": "https://github.com/pkgstore/flarum-l10n-ext-russian",
-    "issues": "https://github.com/pkgstore/flarum-l10n-ext-russian/issues",
-    "docs": "https://github.com/pkgstore/flarum-l10n-ext-russian/wiki",
-    "forum": "https://github.com/pkgstore/flarum-l10n-ext-russian/discussions"
+    "source": "https://github.com/cmfstore/flarum-l10n-russian-extra",
+    "issues": "https://github.com/cmfstore/flarum-l10n-russian-extra/issues",
+    "docs": "https://github.com/cmfstore/flarum-l10n-russian-extra/wiki",
+    "forum": "https://github.com/cmfstore/flarum-l10n-russian-extra/discussions"
   },
   "require": {
     "flarum/core": "^1.1"
   },
   "suggest": {
     "flarum/flarum": "Flarum",
-    "pkgstore/flarum-l10n-core-russian": "Flarum Russian language pack (UNOFFICIAL)."
+    "cmfstore/flarum-l10n-russian-core": "Flarum russian language pack (UNOFFICIAL)."
   },
   "extra": {
     "branch-alias": {
@@ -34,9 +49,8 @@
       "title": "Русский",
       "category": "language",
       "info": {
-        "donate": "https://kitsune.solar/ru/donate/",
-        "website": "https://pkgstore.github.io/",
-        "support": "https://github.com/pkgstore/flarum-l10n-ext-russian/discussions"
+        "website": "https://github.com/cmfstore",
+        "support": "https://github.com/cmfstore/flarum-l10n-russian-extra/discussions"
       },
       "icon": {
         "image": "icon.svg",
@@ -46,7 +60,7 @@
       }
     },
     "flagrow": {
-      "discuss": "https://github.com/pkgstore/flarum-l10n-ext-russian/discussions"
+      "discuss": "https://github.com/cmfstore/flarum-l10n-russian-extra/discussions"
     },
     "flarum-locale": {
       "code": "ru",
