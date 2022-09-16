@@ -1,6 +1,6 @@
 {
   "name": "zmarket/flarum-l10n-russian-extra",
-  "description": "Flarum extra russian language pack (UNOFFICIAL).",
+  "description": "Flarum extra russian language pack for Flarum (UNOFFICIAL).",
   "type": "flarum-extension",
   "license": "MIT",
   "homepage": "https://z17.dev/",
@@ -11,6 +11,7 @@
     "russian",
     "language",
     "locale",
+    "ru-locale",
     "localization",
     "translation"
   ],
@@ -35,16 +36,15 @@
     "forum": "https://github.com/zbox/flarum-l10n-russian-extra/discussions"
   },
   "require": {
-    "flarum/core": "^1.1"
+    "flarum/core": "^1.4"
   },
   "suggest": {
     "flarum/flarum": "Flarum",
     "zmarket/flarum-l10n-russian-core": "Flarum russian language pack (UNOFFICIAL)."
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "extra": {
-    "branch-alias": {
-      "dev-master": "1.x-dev"
-    },
     "flarum-extension": {
       "title": "Русский",
       "category": "language",
@@ -59,12 +59,12 @@
         "backgroundPosition": "center"
       }
     },
-    "flagrow": {
-      "discuss": "https://github.com/zbox/flarum-l10n-russian-extra/discussions"
-    },
     "flarum-locale": {
       "code": "ru",
       "title": "Русский"
+    },
+    "extiverse": {
+      "discuss": "https://github.com/zbox/flarum-l10n-russian-extra/discussions"
     }
   }
 }
