@@ -4,30 +4,40 @@ on:
   - push
 
 env:
-  dst_owner: "zmarket"
+  owner: "zmarket"
 
 jobs:
-  clone:
+  build:
     if: ${{ github.repository_owner == 'zbox' }}
     runs-on: ubuntu-latest
-    name: "Clone"
+    name: "Build"
     steps:
       - run: |
           echo "repo_name=$( echo '${{ github.repository }}' | awk -F '/' '{ print $2 }' )" >> $GITHUB_ENV
         shell: bash
       - run: |
+          echo "pkg_os=$( echo '${{ github.repository }}' | awk -F '[/-]' '{ print $2 }' )" >> $GITHUB_ENV
+        shell: bash
+      - run: |
+          echo "pkg_name=$( echo '${{ github.repository }}' | awk -F '${{ env.pkg_os }}-' '{ print $2 }' )" >> $GITHUB_ENV
+        shell: bash
+      - run: |
           curl -X POST \
           -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' \
           -H 'Accept: application/vnd.github+json' \
-          '${{ github.api_url }}/orgs/${{ env.dst_owner }}/repos' \
+          '${{ github.api_url }}/orgs/${{ env.owner }}/repos' \
           -d '{"name":"${{ env.repo_name }}","private":false,"has_issues":false,"has_projects":false,"has_wiki":false}' \
           -s -o '/dev/null'
         shell: bash
-      - uses: ghastore/mirror@main
+      - uses: ghastore/store-debian-build@main
         with:
-          src_repo: "${{ github.server_url }}/${{ github.repository }}.git"
-          src_user: "${{ secrets.BOT_GITHUB_NAME }}"
-          src_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
-          dst_repo: "${{ github.server_url }}/${{ env.dst_owner }}/${{ env.repo_name }}.git"
-          dst_user: "${{ secrets.BOT_GITHUB_NAME }}"
-          dst_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+          git_repo_src: "${{ github.server_url }}/${{ github.repository }}.git"
+          git_repo_dst: "${{ github.server_url }}/${{ env.owner }}/${{ env.repo_name }}.git"
+          git_user: "${{ secrets.BOT_GITHUB_NAME }}"
+          git_email: "${{ secrets.BOT_GITHUB_EMAIL }}"
+          git_token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+          obs_user: "${{ secrets.OBS_USER }}"
+          obs_password: "${{ secrets.OBS_PASSWORD }}"
+          obs_token: "${{ secrets.OBS_TOKEN }}"
+          obs_project: "home:${{ env.owner }}:${{ env.pkg_os }}"
+          obs_package: "${{ env.pkg_name }}"
