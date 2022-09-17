@@ -67,5 +67,5 @@ php flarum cache:clear
 ### Синтаксис
 
 ```sh
-for i in *.yml; do yq eval -o=j "${i}" > "json/${i}.json"; done;
+for i in *.yml; do yq eval -o=j "${i}" > "json/${i%.*}.json"; done;
 ```
