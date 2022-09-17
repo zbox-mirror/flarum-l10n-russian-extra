@@ -6,8 +6,8 @@
   "homepage": "https://z17.dev/",
   "keywords": [
     "z17",
-    "extension",
     "flarum",
+    "extension",
     "russian",
     "language",
     "locale",
@@ -54,7 +54,7 @@
       },
       "icon": {
         "image": "icon.svg",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#fff",
         "backgroundSize": "cover",
         "backgroundPosition": "center"
       }
